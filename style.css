@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+ul {
+    margin-top: 7rem;
+    list-style: none;
+}
+
+li {
+    border-bottom: hsl(155, 100%, 19%)1px solid;
+    margin-top: 2rem;
+}
+
+main {
+    display: flex;
+}
+
+.painel::-webkit-scrollbar {
+    height: 0.1px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    background-color: #fdfafa;
+}
+
+#clock {
+    color: hsl(155, 100%, 19%);
+    margin-right: 1px;
+    font-weight: 700;
+}
+
+.month {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 200px;
+    width: 100vw;
+}
+
+.setores {
+    width: 200px;
+    background-color: #fafafa;
+    height: 100vh;
+    position: fixed;
+}
+
+.date {
+    transition: 1s;
+    width: 4rem;
+    border-bottom: hsl(155, 100%, 19%) 1px solid;
+}
+
+.fas {
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.column {
+    margin-top: 3px;
+}
+
+.setor {
+    height: 3.5rem;
+    width: 100%;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.semana {
+    background-color: #DFF2F6;
+    height: 3rem;
+}
+
+.day {
+    background-color: #e4e7ff;
+    height: 3.21rem;
+    flex: none;
+    height: 49px;
+    width: 225px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px 10px;
+    pointer-events: none;
+}
+img{
+    height: 40px;
+}
+
+.painel {
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    height: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    width: 100vw;
+    padding-left: 200px;
+    /* Touch do celular em outros navegadores */
+    -webkit-overflow-scrolling: touch;
+    /* Touch do celular em outros navegadores */
+}
+
+.comercial {
+    background-color: #DFF2F6;
+}
+
+.cobranca {
+    background-color: #DFF2F6;
+}
+
+.execucao {
+    background-color: #DFF2F6;
+}
+
+.suporteEspecializado {
+    background-color: #DFF2F6;
+}
+
+.backbone {
+    background-color: #DFF2F6;
+}
+
+.projetos {
+    background-color: #DFF2F6;
+}
+
+.treinamentos {
+    background-color: #DFF2F6;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.today {
+    box-shadow: inset 0px 3px 3px 0px rgb(0 0 0 / 26%);
+    font-weight: 700;
+    
+}
