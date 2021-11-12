@@ -79,6 +79,11 @@ main {
     align-items: center;
     position: fixed;
 }
+p{
+    height: 50px;
+    width: 100px;
+    background-color: red;
+}
 
 .semana {
     background-color: #DFF2F6;
@@ -90,15 +95,39 @@ main {
     height: 3.21rem;
     flex: none;
     height: 49px;
-    width: 225px;
-    justify-content: center;
-    align-items: center;
+    width: 225px;  
     text-align: center;
     margin: 5px 10px;
     pointer-events: none;
 }
-img{
+.draggable{
     height: 40px;
+    width: 40px;
+    background-size: cover;
+    
+   
+}
+.itemsDraggable{
+    display: flex;    
+}
+.elite{
+    height: 40px;
+    background-image: url(img/elite-logo.png);
+    
+}
+.simples{
+    height: 40px;
+    background-image: url(img/LOGO_SIMPLES_IP.png);
+}
+.fortics{
+    height: 40px;
+    border-radius: 50%;
+    background-image: url(img/60e59c62948e770011572856.jfif);
+}
+.iclass{
+    height: 40px;
+    width: 60px;
+    background-image: url(img/logo-IClass-Software-de-Ordem-de-Serviço-Online.png);
 }
 
 .painel {

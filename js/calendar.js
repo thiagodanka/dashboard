@@ -64,7 +64,7 @@ const renderCalendar = () => {
 
     if(y.getDay() == a){
 
-      days += `<div class="today"><div class="day"> <div>${semana[a]}</div><div>${i}</div></div> <div class="day comercial">
+      days += `<div id="today" class="today"><div class="day"> <div>${semana[a]}</div><div>${i}</div></div> <div class="day comercial">
                </div><div class="day faturamento"></div> <div class="day cobranca">
                </div><div class="day qualidade"></div> <div class="day execucao">
                </div><div class="day suporte"></div> <div class="day suporteEspecializado">
