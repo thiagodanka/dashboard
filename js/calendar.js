@@ -82,8 +82,7 @@ const renderCalendar = () => {
                    </div><div class="day cobranca"></div> <div class="day qualidade"></div> <div class="day execucao">
                    </div><div class="day suporte"></div> <div class="day suporteEspecializado"></div> <div class="day estoque">
                    </div><div class="day backbone"></div> <div class="day espansao"></div> <div class="day projetos">
-                   </div><div class="day tecnologia"></div> <div class="day treinamentos"></div> <div class="day gestaoPessoas"></div></div>`;    
-          
+                   </div><div class="day tecnologia"></div> <div class="day treinamentos"></div> <div class="day gestaoPessoas"></div></div>`;   
         }
       }
     }
@@ -93,24 +92,33 @@ const renderCalendar = () => {
     monthDays.innerHTML = days;
   }
 
+// rolar para today ao renderizar a pagina
 let painel = document.querySelector(".painel")
 let el = document.getElementById('today')
 let elCoordenadas = el.getBoundingClientRect().x
 painel.scroll(elCoordenadas - 200, 0)
 
 };
-
+let painel = document.querySelector(".painel")
 
 document.querySelector(".prev").addEventListener("click", () => {   
-  date.setMonth(date.getMonth() - 1);    
-  renderCalendar();
+  date.setMonth(date.getMonth() - 1);  
+  if (date.getMonth() == Date.getMonth){
+    painel.scroll(elCoordenadas - 200, 0)
+  }else{
+    painel.scroll(0,0)
+  }
+  renderCalendar();  
 });  
-
 
 document.querySelector(".next").addEventListener("click", () => {    
   date.setMonth(date.getMonth() + 1);   
-    console.log (date)
-  renderCalendar();
+  if (date.getMonth() == Date.getMonth){
+    painel.scroll(elCoordenadas - 200, 0)
+  }else{
+    painel.scroll(0,0)
+  }
+  renderCalendar();  
 });
 
 renderCalendar();

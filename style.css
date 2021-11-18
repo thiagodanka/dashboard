@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: rgba(0, 0, 0, 0.918);
     overflow-x: hidden;
 }
 
@@ -30,13 +31,14 @@ main {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    background-color: #fdfafa;
+    
 }
 
 #clock {
-    color: hsl(155, 100%, 19%);
+    color: chartreuse;
     margin-right: 1px;
     font-weight: 700;
+    
 }
 
 .month {
@@ -44,19 +46,16 @@ main {
     justify-content: space-evenly;
     padding-left: 200px;
     width: 100vw;
+    
+    color: #fafafa;
 }
 
 .setores {
     width: 200px;
-    background-color: #fafafa;
+    color: white;
     height: 100vh;
     position: fixed;
-}
-
-.date {
-    transition: 1s;
-    width: 4rem;
-    border-bottom: hsl(155, 100%, 19%) 1px solid;
+    background-color: rgb(0, 0, 0);
 }
 
 .fas {
@@ -85,13 +84,8 @@ p{
     background-color: red;
 }
 
-.semana {
-    background-color: #DFF2F6;
-    height: 3rem;
-}
-
 .day {
-    background-color: #e4e7ff;
+    background-color: #696969;
     height: 3.21rem;
     flex: none;
     height: 49px;
@@ -99,17 +93,32 @@ p{
     text-align: center;
     margin: 5px 10px;
     pointer-events: none;
+    color: white;
 }
-.draggable{
-    height: 40px;
-    width: 40px;
-    background-size: cover;
-    
-   
+.BTN{
+    background-color: transparent;
+    border:none;    
+    color: white;
 }
-.itemsDraggable{
-    display: flex;    
+.BTN::before {
+    content: "";
+    width: 0px;
+    background-color: chartreuse;
+    position: fixed;
+    top:20px;
+    height: 2px;
+  }
+
+.BTN:hover::before{
+    content: "";
+    width: 33px;
+    background-color: chartreuse;
+    position: fixed;
+    top:20px;
+    height: 2px;
+    transition: 1s;
 }
+
 .elite{
     height: 40px;
     background-image: url(img/elite-logo.png);
@@ -130,7 +139,7 @@ p{
     background-image: url(img/logo-IClass-Software-de-Ordem-de-Serviço-Online.png);
 }
 
-.painel {
+.painel {    
     font-size: 1.2rem;
     font-weight: 400;
     display: flex;
@@ -145,33 +154,6 @@ p{
     /* Touch do celular em outros navegadores */
 }
 
-.comercial {
-    background-color: #DFF2F6;
-}
-
-.cobranca {
-    background-color: #DFF2F6;
-}
-
-.execucao {
-    background-color: #DFF2F6;
-}
-
-.suporteEspecializado {
-    background-color: #DFF2F6;
-}
-
-.backbone {
-    background-color: #DFF2F6;
-}
-
-.projetos {
-    background-color: #DFF2F6;
-}
-
-.treinamentos {
-    background-color: #DFF2F6;
-}
 
 .header {
     display: flex;
