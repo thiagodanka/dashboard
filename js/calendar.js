@@ -39,7 +39,7 @@ const renderCalendar = () => {
 
   document.querySelector(".data .mes").innerHTML = months[date.getMonth()];
 
-  document.querySelector(".data .ano").innerHTML = new Date().getFullYear();
+  document.querySelector(".data .ano").innerHTML = date.getFullYear();
 
   let days = "";
   let y = new Date();
@@ -92,7 +92,12 @@ const renderCalendar = () => {
   for (let j = 1; j <= nextDays; j++) {    
     monthDays.innerHTML = days;
   }
-  
+
+let painel = document.querySelector(".painel")
+let el = document.getElementById('today')
+let elCoordenadas = el.getBoundingClientRect().x
+painel.scroll(elCoordenadas - 200, 0)
+
 };
 
 
@@ -103,7 +108,8 @@ document.querySelector(".prev").addEventListener("click", () => {
 
 
 document.querySelector(".next").addEventListener("click", () => {    
-  date.setMonth(date.getMonth() + 1);        
+  date.setMonth(date.getMonth() + 1);   
+    console.log (date)
   renderCalendar();
 });
 
