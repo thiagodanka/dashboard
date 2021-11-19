@@ -6,7 +6,7 @@
 
 body {
     background-color: rgba(0, 0, 0, 0.918);
-    overflow-x: hidden;
+    overflow-x: hidden;    
 }
 
 ul {
@@ -59,8 +59,9 @@ main {
 }
 
 .fas {
+    padding: 20px;
     height: 100px;
-    width: 100px;
+    width: 100px;    
     cursor: pointer;
     margin: 0 10px;
 }
@@ -78,6 +79,7 @@ main {
     align-items: center;
     position: fixed;
 }
+
 p{
     height: 50px;
     width: 100px;
@@ -91,8 +93,7 @@ p{
     height: 49px;
     width: 225px;  
     text-align: center;
-    margin: 5px 10px;
-    pointer-events: none;
+    margin: 5px 10px;    
     color: white;
 }
 .BTN{
@@ -100,7 +101,7 @@ p{
     border:none;    
     color: white;
 }
-.BTN::before {
+.ano::before {
     content: "";
     width: 0px;
     background-color: chartreuse;
@@ -109,7 +110,7 @@ p{
     height: 2px;
   }
 
-.BTN:hover::before{
+.ano:hover::before{
     content: "";
     width: 33px;
     background-color: chartreuse;
@@ -121,22 +122,25 @@ p{
 
 .elite{
     height: 40px;
-    background-image: url(img/elite-logo.png);
+    
     
 }
 .simples{
     height: 40px;
-    background-image: url(img/LOGO_SIMPLES_IP.png);
+    
 }
 .fortics{
     height: 40px;
     border-radius: 50%;
-    background-image: url(img/60e59c62948e770011572856.jfif);
+    
+}
+img{
+    margin:0 5px;
 }
 .iclass{
     height: 40px;
     width: 60px;
-    background-image: url(img/logo-IClass-Software-de-Ordem-de-Serviço-Online.png);
+    
 }
 
 .painel {    

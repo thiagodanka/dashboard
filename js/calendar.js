@@ -5,9 +5,9 @@ const date = new Date();
 //função principal.
 const renderCalendar = () => {
   date.setDate(1);
- 
+
   const monthDays = document.querySelector(".days");
-  
+
   const lastDay = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
@@ -16,9 +16,9 @@ const renderCalendar = () => {
 
   const lastDayIndex = new Date(
     date.getFullYear(),
-    date.getMonth() +1,
+    date.getMonth() + 1,
     0
-  ).getDay();  
+  ).getDay();
 
   const nextDays = 7 - lastDayIndex - 1;
 
@@ -43,82 +43,122 @@ const renderCalendar = () => {
 
   let days = "";
   let y = new Date();
-  
- const semana =[
-  "Domingo",
-  "Segunda",
-  "Terça",
-  "Quarta",
-  "Quinta",
-  "Sexta",
-  "Sabado",
- ]
 
-  
+  const semana = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sabado",
+  ]
+
+
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth() 
+      date.getMonth() === new Date().getMonth()
     ) {
-      for(let a = 0; a <= 6; a++){
+      for (let a = 0; a <= 6; a++) {
 
-    if(y.getDay() == a){
+        if (y.getDay() == a) {
 
-      days += `<div id="today" class="today"><div class="day"> <div>${semana[a]}</div><div>${i}</div></div> <div class="day comercial">
-               </div><div class="day faturamento"></div> <div class="day cobranca">
-               </div><div class="day qualidade"></div> <div class="day execucao">
-               </div><div class="day suporte"></div> <div class="day suporteEspecializado">
-               </div><div class="day estoque"></div> <div class="day backbone">
-               </div><div class="day espansao"></div> <div class="day projetos">
-               </div><div class="day tecnologia"></div> <div class="day treinamentos"></div><div class="day gestaoPessoas"></div></div>`;
-    }
-    }
-    } else { 
-        
-      dataAtual = new Date(`${date.getMonth()+1} ${i}, ${date.getFullYear()}`)      
-      for (let contador = 0; contador <=6; contador++){
-        if(dataAtual.getDay() == contador){
-          days += `<div><div class="day dia${i}"><div>${semana[contador]}</div><div>${i}</div></div> <div class="day comercial"></div> <div class="day faturamento">
-                   </div><div class="day cobranca"></div> <div class="day qualidade"></div> <div class="day execucao">
-                   </div><div class="day suporte"></div> <div class="day suporteEspecializado"></div> <div class="day estoque">
-                   </div><div class="day backbone"></div> <div class="day espansao"></div> <div class="day projetos">
-                   </div><div class="day tecnologia"></div> <div class="day treinamentos"></div> <div class="day gestaoPessoas"></div></div>`;   
+          days += `<div id="today" class="today dia${i}">
+                      <div class="day"> <div>${semana[a]}</div><div>${i}</div></div> 
+                      <div class="day comercial${i}"></div>   
+                      <div class="day faturamento${i}"></div>
+                      <div class="day cobranca${i}"></div> 
+                      <div class="day qualidade${i}"></div> 
+                      <div class="day execucao${i}"></div>
+                      <div class="day suporte${i}"></div> 
+                      <div class="day suporteEspecializado${i}"></div> 
+                      <div class="day estoque${i}"></div>
+                      <div class="day backbone${i}"></div> 
+                      <div class="day espansao${i}"></div> 
+                      <div class="day projetos${i}"></div>
+                      <div class="day tecnologia${i}"></div> 
+                      <div class="day treinamentos${i}"></div> 
+                      <div class="day gestaoPessoas${i}"> </div>
+                    </div>`;
+        }
+      }
+    } else {
+
+      dataAtual = new Date(`${date.getMonth() + 1} ${i}, ${date.getFullYear()}`)
+      for (let contador = 0; contador <= 6; contador++) {
+        if (dataAtual.getDay() == contador) {
+          days += `<div class="dia${i}">
+                    <div class="day dia">
+                      <div>${semana[contador]}</div><div>${i}</div></div> 
+                        <div class="day comercial${i}"></div>   
+                        <div class="day faturamento${i}"></div>
+                        <div class="day cobranca${i}"></div> 
+                        <div class="day qualidade${i}"></div> 
+                        <div class="day execucao${i}"></div>
+                        <div class="day suporte${i}"></div> 
+                        <div class="day suporteEspecializado${i}"></div> 
+                        <div class="day estoque${i}"></div>
+                        <div class="day backbone${i}"></div> 
+                        <div class="day espansao${i}"></div> 
+                        <div class="day projetos${i}"></div>
+                        <div class="day tecnologia${i}"></div> 
+                        <div class="day treinamentos${i}"></div> 
+                        <div class="day gestaoPessoas${i}"> </div>
+                    </div>`;
         }
       }
     }
   }
- 
-  for (let j = 1; j <= nextDays; j++) {    
+
+  for (let j = 1; j <= nextDays; j++) {
     monthDays.innerHTML = days;
+
   }
 
-// rolar para today ao renderizar a pagina
-let painel = document.querySelector(".painel")
-let el = document.getElementById('today')
-let elCoordenadas = el.getBoundingClientRect().x
-painel.scroll(elCoordenadas - 200, 0)
+  // rolar para today ao renderizar a pagina
+  let painel = document.querySelector(".painel")
+  let today = document.getElementById('today')
+  let todayCoordinates = today.getBoundingClientRect().x
+  painel.scroll(todayCoordinates - 200, 0)
+
+
+
+
+
+//==================================================teste add items
+  const setores = document.querySelector(".cobranca20")
+  let teste = `<img class="elite" src="img/elite-logo.png" alt="">
+  <img class="iclass" src="https://www.iclass.com.br/wp-content/uploads/2018/05/logo-IClass-Software-de-Ordem-de-Servi%C3%A7o-Online.png" 
+  alt=""><img class="simples" src="img/LOGO_SIMPLES_IP.png" alt=""><img class="simples" src="img/WhatsApp.svg.png" alt="">`
+    document.querySelector(".cobranca20").addEventListener("click", (e) => {   
+    setores.innerHTML += teste;
+  })
+//==================================================teste add items
 
 };
+
+
 let painel = document.querySelector(".painel")
 
-document.querySelector(".prev").addEventListener("click", () => {   
-  date.setMonth(date.getMonth() - 1);  
-  if (date.getMonth() == Date.getMonth){
+document.querySelector(".prev").addEventListener("click", () => {
+  date.setMonth(date.getMonth() - 1);
+  if (date.getMonth() == Date.getMonth) {
     painel.scroll(elCoordenadas - 200, 0)
-  }else{
-    painel.scroll(0,0)
+  } else {
+    painel.scroll(0, 0)
   }
-  renderCalendar();  
-});  
+  renderCalendar();
+});
 
-document.querySelector(".next").addEventListener("click", () => {    
-  date.setMonth(date.getMonth() + 1);   
-  if (date.getMonth() == Date.getMonth){
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  if (date.getMonth() == Date.getMonth) {
     painel.scroll(elCoordenadas - 200, 0)
-  }else{
-    painel.scroll(0,0)
+  } else {
+    painel.scroll(0, 0)
   }
-  renderCalendar();  
+  renderCalendar();
 });
 
 renderCalendar();
