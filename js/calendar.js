@@ -124,17 +124,24 @@ const renderCalendar = () => {
 
 
 
+  //==================================================teste add items
 
+  let imagens = `<img class="elite" src="img/elite-logo.png" alt="">
+  <img class="iclass" src="https://www.iclass.com.br/wp-content/uploads/2018/05/logo-IClass-Software-de-Ordem-de-Servi%C3%A7o-Online.png" alt="">
+  <img class="simples" src="img/LOGO_SIMPLES_IP.png" alt="">
+  <img class="simples" src="img/WhatsApp.svg.png" alt="">`
+  
 
-//==================================================teste add items
-  const setores = document.querySelector(".cobranca20")
-  let teste = `<img class="elite" src="img/elite-logo.png" alt="">
-  <img class="iclass" src="https://www.iclass.com.br/wp-content/uploads/2018/05/logo-IClass-Software-de-Ordem-de-Servi%C3%A7o-Online.png" 
-  alt=""><img class="simples" src="img/LOGO_SIMPLES_IP.png" alt=""><img class="simples" src="img/WhatsApp.svg.png" alt="">`
-    document.querySelector(".cobranca20").addEventListener("click", (e) => {   
-    setores.innerHTML += teste;
-  })
-//==================================================teste add items
+  for (let x = 0; x <= 450; x++) {
+
+    const clicado = document.querySelectorAll(`.day`)
+    console.log(clicado[x], 'teste')
+    if (clicado[x].addEventListener("click", () =>{
+      clicado[x].innerHTML = imagens;
+      
+    } ));      
+  }
+  //==================================================teste add items
 
 };
 
@@ -144,7 +151,7 @@ let painel = document.querySelector(".painel")
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   if (date.getMonth() == Date.getMonth) {
-    painel.scroll(elCoordenadas - 200, 0)
+    painel.scroll(todayCoordinates - 200, 0)
   } else {
     painel.scroll(0, 0)
   }
@@ -154,7 +161,7 @@ document.querySelector(".prev").addEventListener("click", () => {
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   if (date.getMonth() == Date.getMonth) {
-    painel.scroll(elCoordenadas - 200, 0)
+    painel.scroll(todayCoordinates - 200, 0)
   } else {
     painel.scroll(0, 0)
   }
