@@ -65,7 +65,10 @@ const renderCalendar = () => {
         if (y.getDay() == a) {
 
           days += `<div id="today" class="today dia${i}">
-                      <div class="day"> <div>${semana[a]}</div><div>${i}</div></div> 
+                      <div class="day"> 
+                        <div>${semana[a]}</div>
+                        <div>${i}</div>
+                      </div> 
                       <div class="day comercial${i}"></div>   
                       <div class="day faturamento${i}"></div>
                       <div class="day cobranca${i}"></div> 
@@ -89,23 +92,25 @@ const renderCalendar = () => {
       for (let contador = 0; contador <= 6; contador++) {
         if (dataAtual.getDay() == contador) {
           days += `<div class="dia${i}">
-                    <div class="day dia">
-                      <div>${semana[contador]}</div><div>${i}</div></div> 
-                        <div class="day comercial${i}"></div>   
-                        <div class="day faturamento${i}"></div>
-                        <div class="day cobranca${i}"></div> 
-                        <div class="day qualidade${i}"></div> 
-                        <div class="day execucao${i}"></div>
-                        <div class="day suporte${i}"></div> 
-                        <div class="day suporteEspecializado${i}"></div> 
-                        <div class="day estoque${i}"></div>
-                        <div class="day backbone${i}"></div> 
-                        <div class="day espansao${i}"></div> 
-                        <div class="day projetos${i}"></div>
-                        <div class="day tecnologia${i}"></div> 
-                        <div class="day treinamentos${i}"></div> 
-                        <div class="day gestaoPessoas${i}"> </div>
-                    </div>`;
+                      <div class="day dia">
+                       <div>${semana[contador]}</div>
+                       <div>${i}</div>
+                      </div>
+                      <div class="day comercial${i}"></div>
+                      <div class="day faturamento${i}"></div>
+                      <div class="day cobranca${i}"></div>
+                      <div class="day qualidade${i}"></div>
+                      <div class="day execucao${i}"></div>
+                      <div class="day suporte${i}"></div>
+                      <div class="day suporteEspecializado${i}"></div>
+                      <div class="day estoque${i}"></div>
+                      <div class="day backbone${i}"></div>
+                      <div class="day espansao${i}"></div>
+                      <div class="day projetos${i}"></div>
+                      <div class="day tecnologia${i}"></div>
+                      <div class="day treinamentos${i}"></div>
+                      <div class="day gestaoPessoas${i}"> </div>
+      </div>`;
         }
       }
     }
@@ -125,26 +130,53 @@ const renderCalendar = () => {
 
 
   //==================================================teste add items
+  const iclassItem = `<img class="iclass"
+    src="https://www.iclass.com.br/wp-content/uploads/2018/05/logo-IClass-Software-de-Ordem-de-Servi%C3%A7o-Online.png"
+    alt="">`
+  const eliteItem = `<img class="elite" src="img/elite-logo.png" alt="">`
+  const simplesItem = `<img class="simples" src="img/LOGO_SIMPLES_IP.png" alt="">`
+  const forticsItem = `<img class="fortics" src = "img/WhatsApp.svg.png" alt = "" >`
 
-  let imagens = `<img class="elite" src="img/elite-logo.png" alt="">
-  <img class="iclass" src="https://www.iclass.com.br/wp-content/uploads/2018/05/logo-IClass-Software-de-Ordem-de-Servi%C3%A7o-Online.png" alt="">
-  <img class="simples" src="img/LOGO_SIMPLES_IP.png" alt="">
-  <img class="simples" src="img/WhatsApp.svg.png" alt="">`
-  
+  const iclass = document.querySelector('.iclass')
+  const elite = document.querySelector('.elite')
+  const simples = document.querySelector('.simples')
+  const fortics = document.querySelector('.fortics')
+  const clicado = document.querySelectorAll(`.day`)
+  const modaloff = document.querySelector(".modaloff")
 
-  for (let x = 0; x <= 450; x++) {
+  for (let x = 0; x <= 450; x++) {    
+    if (clicado[x].addEventListener("click", () => {
+      modaloff.classList.add('modalon')
+      for(let contador = x; contador == x; contador++){
+        console.log(contador)
+      if (iclass.addEventListener("click", () => {
+        clicado[contador].innerHTML += iclassItem
+        modaloff.classList.remove('modalon')
+      }));}
+      if (elite.addEventListener("click", () => {
+        clicado[x].innerHTML += eliteItem
+        modaloff.classList.remove('modalon')
+      }));
+      if (simples.addEventListener("click", () => {
+        clicado[x].innerHTML += simplesItem
+        modaloff.classList.remove('modalon')
+      }));
+      if (fortics.addEventListener("click", () => {
+        clicado[x].innerHTML += forticsItem
+        modaloff.classList.remove('modalon')
+      }));
+    
+    }));
 
-    const clicado = document.querySelectorAll(`.day`)
-    console.log(clicado[x], 'teste')
-    if (clicado[x].addEventListener("click", () =>{
-      clicado[x].innerHTML = imagens;
-      
-    } ));      
+    const closeModal = document.querySelector('.closeModal')
+    if (closeModal.addEventListener("click", () => {
+      modaloff.classList.remove('modalon')
+    }));
   }
+
   //==================================================teste add items
 
 };
-
 
 let painel = document.querySelector(".painel")
 

@@ -2,11 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 body {
     background-color: rgba(0, 0, 0, 0.918);
-    overflow-x: hidden;    
+    overflow-x: hidden;
 }
 
 ul {
@@ -31,14 +32,14 @@ main {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    
+
 }
 
 #clock {
     color: chartreuse;
     margin-right: 1px;
     font-weight: 700;
-    
+
 }
 
 .month {
@@ -46,7 +47,7 @@ main {
     justify-content: space-evenly;
     padding-left: 200px;
     width: 100vw;
-    
+
     color: #fafafa;
 }
 
@@ -61,7 +62,7 @@ main {
 .fas {
     padding: 20px;
     height: 100px;
-    width: 100px;    
+    width: 100px;
     cursor: pointer;
     margin: 0 10px;
 }
@@ -80,7 +81,7 @@ main {
     position: fixed;
 }
 
-p{
+p {
     height: 50px;
     width: 100px;
     background-color: red;
@@ -91,59 +92,107 @@ p{
     height: 3.21rem;
     flex: none;
     height: 49px;
-    width: 225px;  
+    width: 225px;
     text-align: center;
-    margin: 5px 10px;        
+    margin: 5px 10px;
     color: white;
 }
-.BTN{
+
+.BTN {
     background-color: transparent;
-    border:none;    
+    border: none;
     color: white;
 }
+
 .ano::before {
     content: "";
     width: 0px;
     background-color: chartreuse;
     position: fixed;
-    top:20px;
+    top: 20px;
     height: 2px;
-  }
+}
 
-.ano:hover::before{
+.ano:hover::before {
     content: "";
     width: 33px;
     background-color: chartreuse;
     position: fixed;
-    top:20px;
+    top: 20px;
     height: 2px;
     transition: 1s;
 }
 
-.elite{
+.elite {
     height: 40px;
     
-    
+
+
 }
-.simples{
+
+.simples {
     height: 40px;
     
+
 }
-.fortics{
+
+.fortics {
     height: 40px;
     border-radius: 50%;
     
+
 }
-img{
-    margin:0 2px;
-}
-.iclass{
+
+.iclass {
     height: 40px;
     width: 60px;
     
+
 }
 
-.painel {    
+img {
+    margin: 0 2px;
+}
+
+.closeModal {
+    position: fixed;
+    top: 210px;
+    right: 705px;
+    height: 20px;
+   
+
+}
+
+.modaloff {
+    visibility: hidden;
+    display: none;
+    background-color: #000000;    
+}
+
+.modaloff.modalon {
+    display: block;
+    position: fixed;
+    background-color: #00000098;
+    height: 100vh;
+    width: 100vw;
+    visibility: visible;
+    align-items: center;
+}
+
+.modal {
+    animation: modal 0.1s linear;
+    border-radius: 5px;
+    background-color: white;
+    margin: 200px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 550px;
+    height: 350px;
+    box-shadow: -.1em .1em .5em #fafafa;
+}
+
+.painel {
     font-size: 1.2rem;
     font-weight: 400;
     display: flex;
@@ -163,11 +212,31 @@ img{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
 .today {
     box-shadow: inset 0px 3px 3px 0px rgb(0 0 0 / 26%);
     font-weight: 700;
-    
+
+}
+
+@keyframes modal {
+    0% {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+        left: -500px;
+        top: -500px;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+
+        width: 550px;
+        height: 350px;
+    }
 }
