@@ -2,7 +2,8 @@
 // Adicionando a variavel date a data atual
 const date = new Date();
 
-//função principal.
+
+//=============================função principal.
 const renderCalendar = () => {
   date.setDate(1);
 
@@ -118,7 +119,6 @@ const renderCalendar = () => {
 
   for (let j = 1; j <= nextDays; j++) {
     monthDays.innerHTML = days;
-
   }
 
   // rolar para today ao renderizar a pagina
@@ -142,41 +142,43 @@ const renderCalendar = () => {
   const simples = document.querySelector('.simples')
   const fortics = document.querySelector('.fortics')
   const clicado = document.querySelectorAll(`.day`)
-  const modaloff = document.querySelector(".modaloff")
+  const modalOff = document.querySelector(".modalOff")
 
   for (let x = 0; x <= 450; x++) {    
     if (clicado[x].addEventListener("click", () => {
-      modaloff.classList.add('modalon')
+      modalOff.classList.add('modalOn')
       for(let contador = x; contador == x; contador++){
         console.log(contador)
       if (iclass.addEventListener("click", () => {
         clicado[contador].innerHTML += iclassItem
-        modaloff.classList.remove('modalon')
+        modalOff.classList.remove('modalOn')
       }));}
       if (elite.addEventListener("click", () => {
         clicado[x].innerHTML += eliteItem
-        modaloff.classList.remove('modalon')
+        modalOff.classList.remove('modalOn')
       }));
       if (simples.addEventListener("click", () => {
         clicado[x].innerHTML += simplesItem
-        modaloff.classList.remove('modalon')
+        modalOff.classList.remove('modalOn')
       }));
       if (fortics.addEventListener("click", () => {
         clicado[x].innerHTML += forticsItem
-        modaloff.classList.remove('modalon')
+        modalOff.classList.remove('modalOn')
       }));
     
     }));
 
     const closeModal = document.querySelector('.closeModal')
     if (closeModal.addEventListener("click", () => {
-      modaloff.classList.remove('modalon')
+      modalOff.classList.remove('modalOn')
     }));
   }
 
   //==================================================teste add items
 
-};
+};//=============================função principal. Fim
+
+
 
 let painel = document.querySelector(".painel")
 
