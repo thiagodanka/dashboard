@@ -144,34 +144,41 @@ const renderCalendar = () => {
   const clicado = document.querySelectorAll(`.day`)
   const modalOff = document.querySelector(".modalOff")
 
-  for (let x = 0; x <= 450; x++) {    
+  for (let x = 0; x <= 450; x++) {
     if (clicado[x].addEventListener("click", () => {
       modalOff.classList.add('modalOn')
-      for(let contador = x; contador == x; contador++){
-        console.log(contador)
-      if (iclass.addEventListener("click", () => {
-        clicado[contador].innerHTML += iclassItem
-        modalOff.classList.remove('modalOn')
-      }));}
-      if (elite.addEventListener("click", () => {
-        clicado[x].innerHTML += eliteItem
-        modalOff.classList.remove('modalOn')
-      }));
-      if (simples.addEventListener("click", () => {
-        clicado[x].innerHTML += simplesItem
-        modalOff.classList.remove('modalOn')
-      }));
-      if (fortics.addEventListener("click", () => {
-        clicado[x].innerHTML += forticsItem
-        modalOff.classList.remove('modalOn')
-      }));
-    
+
+      for (let t = 1; t <= 1; t++) {
+        let y = x
+        if (iclass.addEventListener("click", () => {
+          clicado[y].innerHTML += iclassItem
+          modalOff.classList.remove('modalOn')
+          y = 0
+        }));
+
+        if (elite.addEventListener("click", () => {
+          clicado[y].innerHTML += eliteItem
+          modalOff.classList.remove('modalOn')
+          y = 0
+        }));
+        if (simples.addEventListener("click", () => {
+          clicado[y].innerHTML += simplesItem
+          modalOff.classList.remove('modalOn')
+          y = 0
+        }));
+        if (fortics.addEventListener("click", () => {
+          clicado[y].innerHTML += forticsItem
+          modalOff.classList.remove('modalOn')
+          y = 0
+        }));
+        const closeModal = document.querySelector('.closeModal')
+        if (closeModal.addEventListener("click", () => {
+          modalOff.classList.remove('modalOn')
+          y = 0
+        }));
+      }
     }));
 
-    const closeModal = document.querySelector('.closeModal')
-    if (closeModal.addEventListener("click", () => {
-      modalOff.classList.remove('modalOn')
-    }));
   }
 
   //==================================================teste add items
